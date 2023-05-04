@@ -36,7 +36,7 @@
 <body style="margin : 0px; overflow: hidden;">
     <!--图像加载前显示加载中...-->
     <div class="arjs-loader">
-      <div>Loading, please wait...</div>
+      <div>Loading, please wait...等待ing</div>
     </div>
     <a-scene
       vr-mode-ui="enabled: false;"
@@ -47,14 +47,14 @@
       <!--我们使用了 cors 代理来避免跨域问题-->
       <a-nft
         type="nft"
-        url="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+        url="./assets/nft/trex/trex-image/trex"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
       >
         <a-entity
-          gltf-model="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+          gltf-model="./assets/nft/trex/scene.gltf"
           scale="5 5 5"
           position="50 150 0"
         >
