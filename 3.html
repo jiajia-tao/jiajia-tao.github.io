@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <title>标记追踪</title>
+  <title>标记追踪：预设值、type="pattern"</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!--我们导入了没有 NFT 的 Ar.js 版本，不过支持标记和基于位置的AR-->
   <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
@@ -12,6 +12,7 @@
       <!-- 设置一个模型，设置模型的位置、大小、地址 -->
       <!-- 因为position设置了10，需要距离图片远一些，才会出现，位置只是从0修改成1，偏移就会很大， -->
       <!-- 设置显示多个内容 -->
+      <!-- 中文果然是不显示的，给text标签设置字体样式font -->
       <a-marker preset="hiro">
         <a-entity
           position="0 1 0"
@@ -26,6 +27,7 @@
         ></a-text>
         <a-text
           value="中文（Chinese）"
+          font="./assets/fonts/custom-msdf/custom-msdf.json"
           position="-0.5 1 0"
           color="#00dd"
           scale="3 3 3"
