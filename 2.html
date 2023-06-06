@@ -12,17 +12,25 @@
   <!-- 根据经纬度显示文字，可是经纬度貌似有问题 -->
   <body style="margin: 0; overflow: hidden">
     <a-scene
-      vr-mode-ui="enabled: false"
+      vr-mode-ui="enabled: true"
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-    <!-- 经纬度精度，小数点后15位，之前是6位 -->
+      <!-- 经纬度精度，小数点后15位，之前是6位 -->
       <a-text
         value="当前坐标设置的是联创大厦辅楼"
         look-at="[gps-camera]"
         scale="5 5 5"
         gps-entity-place="latitude: 31.546265128504725; longitude: 120.2556359610939;"
       ></a-text>
+      
+      <a-box
+        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
+        material="color: yellow"
+        position="0 90 0"
+        scale="10 10 10"
+      >
+      </a-box>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
