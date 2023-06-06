@@ -11,22 +11,24 @@
       <!-- 有一个标记，名称叫做hiro，图片中间的文字 -->
       <!-- 设置一个模型，设置模型的位置、大小、地址 -->
       <!-- 因为position设置了10，需要距离图片远一些，才会出现 -->
+      <!-- 设置显示多个内容 -->
       <a-marker preset="hiro">
         <a-entity
           position="0 1 0"
           scale="5 5 5"
           gltf-model="./assets/Xbot.glb"
         ></a-entity>
+        <a-text
+          value="this is lihu"
+          position="1 1 0"
+          color="#ff0000"
+          scale="10 10 10"
+        ></a-text>
       </a-marker>
 
       <!-- 设置一个蠡湖标记 -->
       <a-marker type="pattern" url="./assets/pattern-lihu1.patt">
-        <a-text
-          value="这里是美丽的蠡湖"
-          position="1 1 0"
-          color="red"
-          scale="10 10 10"
-        ></a-text>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       </a-marker>
       <!-- 设置一个相机，用于显示ar场景 -->
       <a-entity camera></a-entity>
