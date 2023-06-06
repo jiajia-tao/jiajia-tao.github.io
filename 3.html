@@ -10,25 +10,31 @@
     <a-scene embedded arjs>
       <!-- 有一个标记，名称叫做hiro，图片中间的文字 -->
       <!-- 设置一个模型，设置模型的位置、大小、地址 -->
-      <!-- 因为position设置了10，需要距离图片远一些，才会出现 -->
+      <!-- 因为position设置了10，需要距离图片远一些，才会出现，位置只是从0修改成1，偏移就会很大， -->
       <!-- 设置显示多个内容 -->
       <a-marker preset="hiro">
         <a-entity
           position="0 1 0"
-          scale="5 5 5"
+          scale="1.5 1.5 1.5"
           gltf-model="./assets/Xbot.glb"
         ></a-entity>
         <a-text
           value="this is lihu"
-          position="1 1 0"
+          position="0.5 1 0"
           color="#ff0000"
-          scale="10 10 10"
+          scale="3 3 3"
+        ></a-text>
+        <a-text
+          value="中文（Chinese）"
+          position="-0.5 1 0"
+          color="#00dd"
+          scale="3 3 3"
         ></a-text>
       </a-marker>
 
       <!-- 设置一个蠡湖标记 -->
       <a-marker type="pattern" url="./assets/pattern-lihu1.patt">
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-box position="0 0.5 0" rotation="0 45 0" color="#4CC3D9"></a-box>
       </a-marker>
       <!-- 设置一个相机，用于显示ar场景 -->
       <a-entity camera></a-entity>
