@@ -8,10 +8,16 @@
     <!-- <script src="./js/aframe-ar-nft.js"></script> -->
     <!-- 只使用基于位置的aframe -->
     <script src="./js/aframe-ar-new-location-only.js"></script>
+    <!-- 引入调试工具 -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script>
+      let vConsole = new window.VConsole();
+      console.log("v", vConsole);
+
+
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
-          console.log(position.coords)
+          console.log(position.coords); 
           document
             .querySelector("a-text")
             .setAttribute(
@@ -36,6 +42,13 @@
         scale="5 5 5"
         color="#00bbff"
       ></a-text>
+       <a-box
+        gps-entity-place="latitude: 31.548338; longitude: 120.251785;"
+        material="color: yellow"
+        position="0 5 0"
+        scale="50 50 50"
+      >
+      </a-box>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
