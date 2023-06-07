@@ -27,7 +27,7 @@
             .querySelector("a-box")
             .setAttribute(
               "gps-entity-place",
-              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+              "latitude: 31.54630570739825; longitude: 120.25572550417549;"
             );
         });
       };
@@ -40,6 +40,15 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
+      <a-text
+        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
+        look-at="[gps-camera]"
+        scale="5 5 5"
+        color="#00bbee"
+        position="0 1 2"
+        value="text2"
+      >
+      </a-text>
       <a-text
         value="welcome to company"
         look-at="[gps-camera]"
@@ -55,15 +64,7 @@
         scale="50 50 50"
       >
       </a-box>
-      <a-text
-        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
-        look-at="[gps-camera]"
-        scale="5 5 5"
-        color="#00bbee"
-        position="0 1 2"
-        value="text2"
-      >
-      </a-text>
+
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>

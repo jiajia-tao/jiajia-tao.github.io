@@ -22,12 +22,12 @@
             position.coords.latitude,
             position.coords.longitude
           ); // // 31.548338 120.251785
-          // document
-          //   .querySelector("a-text")
-          //   .setAttribute(
-          //     "gps-entity-place",
-          //     `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
-          //   );
+          document
+            .querySelector("a-text")
+            .setAttribute(
+              "gps-entity-place",
+              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+            );
         });
         const distanceMsg = document
           .querySelector("a-text")
