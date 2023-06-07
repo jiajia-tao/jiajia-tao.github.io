@@ -14,10 +14,9 @@
       let vConsole = new window.VConsole();
       console.log("v", vConsole);
 
-
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
-          console.log(position.coords); 
+          console.log(position.coords);
           document
             .querySelector("a-text")
             .setAttribute(
@@ -36,19 +35,28 @@
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
       <a-text
-        value="你好世界"
-        font="./assets/fonts/custom-msdf/custom-msdf.json"
+        value="welcome to company"
         look-at="[gps-camera]"
         scale="5 5 5"
-        color="#00bbff"
+        color="#00bb"
+        position="0 10 0"
       ></a-text>
-       <a-box
-        gps-entity-place="latitude: 31.548338; longitude: 120.251785;"
+      <a-box
+        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
         material="color: yellow"
+        look-at="[gps-camera]"
         position="0 5 0"
         scale="50 50 50"
       >
       </a-box>
+      <a-text
+        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
+        look-at="[gps-camera]"
+        scale="5 5 5"
+        color="#00bb"
+        position="0 10 2"
+      >
+      </a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
