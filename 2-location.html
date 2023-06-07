@@ -5,7 +5,9 @@
     <title>使用js获取当前所在位置，在该位置周围显示文本</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="./js/aframe-ar-nft.js"></script>
+    <!-- <script src="./js/aframe-ar-nft.js"></script> -->
+    <!-- 只使用基于位置的aframe -->
+    <script src="./js/aframe-ar-new-location-only.js"></script>
     <script>
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
