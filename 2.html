@@ -6,7 +6,7 @@
     <title>基于位置的ar，在路上显示各种图片</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="./js/aframe-ar-nft-new.js"></script>
+    <script src="./js/aframe-ar-new-location-only.js"></script>
 
     <!-- 引入调试工具 -->
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
@@ -17,22 +17,14 @@
 
       window.onload = function () {
         navigator.geolocation.getCurrentPosition((position) => {
-          console.log("position",position.coords);
-          document
-            .querySelector("a-text")
-            .setAttribute(
-              "gps-entity-place",
-              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
-            );
+          console.log("position",position.coords.latitude,position.coords.longitude);
+          // document
+          //   .querySelector("a-text")
+          //   .setAttribute(
+          //     "gps-entity-place",
+          //     `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+          //   );
         });
-        document
-          .querySelector(".say-hi-button")
-          .addEventListener("click", function () {
-            // here you can change also a-scene or a-entity properties, like
-            // changing your 3D model source, size, position and so on
-            // or you can just open links, trigger actions...
-            alert("Hi there!");
-          });
       };
     </script>
   </head>
