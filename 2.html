@@ -8,6 +8,14 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
     <script src="./js/aframe-ar-nft.js"></script>
+
+    <!-- 引入调试工具 -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+      // VConsole 默认会挂载到 `window.VConsole` 上
+      var vConsole = new window.VConsole();
+      console.log("v", vConsole);
+    </script>
   </head>
   <!-- 根据经纬度显示文字，可是经纬度貌似有问题 -->
   <body style="margin: 0; overflow: hidden">
@@ -17,21 +25,29 @@
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
       <!-- 经纬度精度，小数点后15位，之前是6位 -->
+      <!-- positionMinAccuracy:位置信号所允许的最小精度 -->
+      <!-- position="0 5 0":您可以使用 a-frame 的“position”参数指定一个 y 值来更改内容的高度 -->
       <a-text
         value="this is lianchuang"
         look-at="[gps-camera]"
         scale="5000 5000 5000"
         gps-entity-place="latitude: 31.546265128504725; longitude: 120.2556359610939;"
+        positionMinAccuracy="10000"
+        position="0 10 0"
       ></a-text>
-      
-      <a-box
+      <!-- 报错：无法检索GPS位置，没有信号 -->
+      <!-- <a-box
         gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
         material="color: yellow"
         position="0 5 0"
         scale="5000 5000 5000"
       >
-      </a-box>
+      </a-box> -->
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
+  <script>
+    const distanceMsg = document.querySelector("[gps-entity-place]").getAttribute("distanceMsg");
+    console.log("gps=entity",distanceMsg); // "890 meters"
+  </script>
 </html>
