@@ -8,28 +8,26 @@
     <!-- <script src="./js/aframe-ar-nft.js"></script> -->
     <!-- 只使用基于位置的aframe -->
     <script src="./js/aframe-ar-new-location-only.js"></script>
-    <!-- 引入调试工具 -->
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-    <script>
-      let vConsole = new window.VConsole();
-      console.log("v", vConsole);
 
+    <script>
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
           console.log(position.coords.latitude);
-          document
-            .querySelector("a-text")
-            .setAttribute(
-              "gps-entity-place",
-              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
-            );
-          document
-            .querySelector("a-box")
-            .setAttribute(
-              "gps-entity-place",
-              "latitude: 31.54630570739825; longitude: 120.25572550417549;"
-            );
+          // 没有给welcome设置坐标，为什么还是显示了呢？
+          // document
+          //   .querySelector("a-text")
+          //   .setAttribute(
+          //     "gps-entity-place",
+          //     `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+          //   );
         });
+        // 盒子的尺寸很大，挡住了文字，修改了scale,经纬度是手动设置的
+        document
+          .querySelector("a-box")
+          .setAttribute(
+            "gps-entity-place",
+            "latitude: 31.54630570739825; longitude: 120.25572550417549;"
+          );
       };
     </script>
   </head>
@@ -46,7 +44,7 @@
         scale="5 5 5"
         color="#00bbee"
         position="0 1 2"
-        value="text2"
+        value="right"
       >
       </a-text>
       <a-text
@@ -60,8 +58,8 @@
         gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
         color="#00ffaf"
         look-at="[gps-camera]"
-        position="0 1 0"
-       
+        position="0 1 2"
+        scale="0.1 0.1 0.1"
       >
       </a-box>
 
