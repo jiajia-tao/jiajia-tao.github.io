@@ -1,64 +1,52 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>基于位置的ar，在路上显示各种图片</title>
+    <title>基于位置的ar</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <!-- <script src="./js/aframe-ar-nft.js"></script> -->
+    <!-- 只使用基于位置的aframe -->
     <script src="./js/aframe-ar-new-location-only.js"></script>
 
-    <!-- 引入调试工具 -->
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script>
-      // VConsole 默认会挂载到 `window.VConsole` 上
-      let vConsole = new window.VConsole();
-      console.log("v", vConsole);
-
-      window.onload = function () {
+      window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
-          console.log(
-            "position",
-            position.coords.latitude,
-            position.coords.longitude
-          ); // // 31.548338 120.251785
-          document
-            .querySelector("a-box")
-            .setAttribute(
-              "gps-entity-place",
-              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
-            );
+          console.log(position.coords.latitude);
+          // 没有给welcome设置坐标，为什么还是显示了呢？
+          // document
+          //   .querySelector("a-text")
+          //   .setAttribute(
+          //     "gps-entity-place",
+          //     `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+          //   );
         });
+        // 盒子的尺寸很大，挡住了文字，修改了scale,经纬度是手动设置的
+        document
+          .querySelector("a-box")
+          .setAttribute(
+            "gps-entity-place",
+            "latitude: 31.54630570739825; longitude: 120.25572550417549;"
+          );
       };
     </script>
   </head>
-  <!-- 根据经纬度显示文字，可是经纬度貌似有问题 -->
+
   <body style="margin: 0; overflow: hidden">
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- 经纬度精度，小数点后15位，之前是6位 -->
-      <!-- positionMinAccuracy:位置信号所允许的最小精度 -->
-      <!-- position="0 5 0":您可以使用 a-frame 的“position”参数指定一个 y 值来更改内容的高度，修改成1-->
-      <!-- <a-text
-        gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
-        look-at="[gps-camera]"
-        scale="5 5 5"
-        position="0 1 1"
-        color="#ff0000"
-        value="left"
-      ></a-text> -->
+      
       <a-box
         gps-entity-place="latitude: 31.54630570739825; longitude: 120.25572550417549;"
-        color="#ff0000"
+        color="#00ffaf"
         look-at="[gps-camera]"
         position="0 1 2"
-        scale="0.1 0.1 0.1"
+        scale="0.5 0.5 0.5"
       >
       </a-box>
-
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
