@@ -9,27 +9,22 @@ arjs练习官网里面的例子
 
 #### 安装教程
 
-git clone 
+git clone https://gitee.com/meta3d/arjs-exercise.git；
+在github里面申请个人网站，将代码提交到对应的github仓库；
+打开个人网站的地址，https，进行访问；
+
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  图片追踪
+2.  基于位置
+3.  标识追踪
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+
 
 
 #### 特技
+增强现实--在当前的真实环境下，透过手机摄像头，显示虚拟的文字和模型等；
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
