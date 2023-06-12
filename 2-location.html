@@ -5,21 +5,21 @@
     <title>使用js获取当前所在位置，在该位置周围显示文本</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <!-- <script src="./js/aframe-ar-nft.js"></script> -->
+    <script src="./js/aframe-ar-nft.js"></script>
     <!-- 只使用基于位置的aframe -->
-    <script src="./js/aframe-ar-new-location-only.js"></script>
+    <!-- <script src="./js/aframe-ar-new-location-only.js"></script> -->
 
     <script>
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
           console.log(position.coords.latitude);
           // 没有给welcome设置坐标，为什么还是显示了呢？
-          // document
-          //   .querySelector("a-text")
-          //   .setAttribute(
-          //     "gps-entity-place",
-          //     `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
-          //   );
+          document
+            .querySelector("a-text")
+            .setAttribute(
+              "gps-entity-place",
+              `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+            );
         });
         // 盒子的尺寸很大，挡住了文字，修改了scale,经纬度是手动设置的
         document
